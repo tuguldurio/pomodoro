@@ -19,6 +19,6 @@ git commit -m "deploy (commit: $COMMIT)"
 # git push -f git@github.com:<USER-NAME>/<REPO>.git master:gh-pages
 
 # if you are using HTTPS/2FA authentication
-git push -f https://github.com/tuguldurio/quick-quiz.git master:gh-pages
+git push -f https://github.com/tuguldurio/pomodoro.git master:gh-pages
 
 cd ..

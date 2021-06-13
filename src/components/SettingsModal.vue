@@ -23,16 +23,17 @@
             leave-to="opacity-0 scale-95"
           >
             <div class="w-full max-w-md relative left-1/2 transform -translate-x-1/2 p-6 my-8 overflow-hidden text-left transition-all bg-white shadow-xl rounded-xl">
-              <div @click="closeModal" class="absolute right-0 top-0 mt-3 mr-3 text-gray-400 hover:text-gray-900 transition-colors duration-100 cursor-pointer">✕</div>
+              <div @click="closeSettings" class="absolute right-0 top-0 mt-3 mr-3 text-gray-400 hover:text-gray-900 transition-colors duration-100 cursor-pointer">✕</div>
               <div class="inline-flex flex-col divide-y w-full overflow-hidden text-left">
                 <p class="pb-4 text-xl font-medium leading-6 text-gray-900">Settings</p>
 
                 <div class="py-4">
                   <div class="">
                     <p class="text-lg text-gray-900">Time (minutes)</p>
-                    <div class="grid grid-cols-3 gap-x-8">
-                      <div v-for="mode in modes">
-                        <label>{{mode.title}}</label>
+                    <div class="grid grid-cols-3 gap-x-2 sm:gap-x-8">
+                      <div v-for="mode in modes" class="flex flex-col">
+                        <label class="my-1 flex-1 text-sm font-light text-gray-700">{{mode.title}}</label>
+                        
                         <input type="number" min="1" step="1" :value="state.durations[mode.id]" @change="changed($event, mode.id)"
                           class="w-full box-border p-2 bg-gray-200 rounded-lg focus:outline-none"
                         >

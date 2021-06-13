@@ -33,19 +33,15 @@
 import { ref, defineProps, computed } from 'vue'
 import useModes from '../../composables/mode'
 
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from 'tailwind.config.js'
-const fullConfig = resolveConfig(tailwindConfig)
-
 const { modes, selectedMode, changeMode } = useModes()
 
 const props = defineProps({
   progress: Number,
 })
 
-const radius = ref(parseInt(fullConfig.theme.screens.sm.slice(0, -2)) < window.screen.width ? 200 : 150)
+const radius = ref(640 < window.screen.width ? 200 : 150)
 window.addEventListener('resize', () => {
-  radius.value = parseInt(fullConfig.theme.screens.sm.slice(0, -2)) < window.screen.width ? 200 : 150
+  radius.value = 640 < window.screen.width ? 200 : 150
 })
 
 const stroke = ref(6)

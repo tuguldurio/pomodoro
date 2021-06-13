@@ -35,6 +35,9 @@ export default function useModes() {
       throw 'Parameter is not mode!'
     }
     selectedMode.value = mode
+    // const favicon = document.getElementById("favicon");
+    // favicon.href = "https://www.google.com/favicon.ico";
+    // favicon.
   }
 
   return {
